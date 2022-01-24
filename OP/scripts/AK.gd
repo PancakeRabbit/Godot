@@ -1,0 +1,9 @@
+extends "res://scripts/gunClass.gd"
+
+
+func _ready():
+	pass
+
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_mouseClick"):
+		shoot("res://scenes/Guns/bullet/AKBullet.tscn", $Muzzle)

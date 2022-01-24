@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+
+[node name="Game" type="Node2D"]
+
+[node name="weapons" type="Node" parent="."]
+
+[node name="Pickup" parent="weapons" instance=ExtResource( 1 )]
+position = Vector2( 323, 114 )
+
+[node name="Pickup2" parent="weapons" instance=ExtResource( 1 )]
+position = Vector2( 107, 112 )
+representing_gun = "AWM"
+
+[node name="Pickup4" parent="weapons" instance=ExtResource( 1 )]
+position = Vector2( 483, 103 )
+
+[node name="Pickup3" parent="weapons" instance=ExtResource( 1 )]
+position = Vector2( 399, 102 )
+representing_gun = "AK"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 361, 110 )

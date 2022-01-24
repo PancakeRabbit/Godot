@@ -1,0 +1,3 @@
+Revolver	16	80
+AK	30	150
+AWM	5	25
