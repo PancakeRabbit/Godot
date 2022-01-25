@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Guns/AWM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/AmmoCount.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
@@ -8,8 +10,9 @@ extents = Vector2( 20, 20 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 22, 22 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.988532, 1 )
+z_index = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -34,6 +37,13 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Gun" type="Node2D" parent="."]
+
+[node name="AWM" parent="Gun" instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Ammo" parent="Camera2D" instance=ExtResource( 3 )]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

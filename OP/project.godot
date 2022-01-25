@@ -14,6 +14,10 @@ config/name="trying object picking"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://ressources/sprites/icon.png"
 
+[autoload]
+
+GunData="*res://scripts/gun/gunData.gd"
+
 [importer_defaults]
 
 texture={
